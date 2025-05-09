@@ -1,0 +1,4 @@
+# Porter aliases
+
+export STAGING_CLUSTER=1359
+export PRODUCTION_CLUSTER=1772
