@@ -1,0 +1,8 @@
+alias ls=colorls
+alias python=python3
+alias n=nvim
+alias dgo='cd ~/dev/badger-go/monolith && source $(poetry env info --path)/bin/activate && nvim .'
+alias dn='cd ~/.config/nvim/ && n .'
+alias dc='n ~/.zshrc'
+
+

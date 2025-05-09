@@ -133,52 +133,9 @@ export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 
-
-
-
-function reload_audio() {
-  # Source: https://superuser.com/questions/17312/restart-ubuntu-sound-processes-via-command-line
-  pulseaudio -k
-  sudo alsa force-reload
-}
-
-function personal_github_account() {
-	git config --global user.name "antoniogamiz"
-	git config --global user.email "antoniogamiz10@gmail.com"
-    ssh-add -D && ssh-add ~/.ssh/personal_user
-}
-
-
-function work_github_account() {
-    git config --global user.name "antoniogamizbadger"
-    git config --global user.email "antonio.gamiz@badgermapping.com"
-    ssh-add -D && ssh-add ~/.ssh/id_ed25519
-}
-
-alias ls=colorls
-alias python=python3
-alias n=nvim
-
-alias dgo='cd ~/dev/badger-go/monolith && source $(poetry env info --path)/bin/activate && nvim .'
-alias dn='cd ~/.config/nvim/ && n .'
-alias dc='n ~/.zshrc'
-# git 
-alias gs='git status'
-alias gl='git log --oneline'
-alias glast='git log -1 HEAD --stat' 
-alias m='git checkout main'
-alias pull='git pull origin $(git branch --show-current) --no-edit'
-alias push='pull; git push origin $(git branch --show-current)'
-alias fpush='git push -f origin $(git branch --show-current)'
-alias gc='git commit -m'
-
 eval "$(zoxide init zsh)"
 
 export DOCKER_BUILDKIT=1
-
-function branch () {
- git symbolic-ref --short HEAD | pbcopy
-}
 
 export LDFLAGS="-L/opt/homebrew/opt/zlib/lib -L/usr/local/opt/openssl/lib"
 export CPPFLAGS="-I/opt/homebrew/opt/zlib/include -I/usr/local/opt/openssl/include"
@@ -187,7 +144,7 @@ export GDAL_LIBRARY_PATH="/opt/homebrew/Cellar/gdal/3.10.3/lib/libgdal.dylib"
 export GEOS_LIBRARY_PATH="/opt/homebrew/Cellar/geos/3.13.1/lib/libgeos_c.dylib"
 
 source ~/.git-aliases
-
+source ~/.zsh_aliases
 
 # bun completions
 [ -s "/Users/antoniogamizdelgado/.bun/_bun" ] && source "/Users/antoniogamizdelgado/.bun/_bun"
