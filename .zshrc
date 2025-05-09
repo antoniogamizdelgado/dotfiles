@@ -145,7 +145,7 @@ export GEOS_LIBRARY_PATH="/opt/homebrew/Cellar/geos/3.13.1/lib/libgeos_c.dylib"
 
 source ~/.git-aliases
 source ~/.zsh_aliases
-source ~/.porter_aliases
+source ~/.porter_aliases.sh
 
 # bun completions
 [ -s "/Users/antoniogamizdelgado/.bun/_bun" ] && source "/Users/antoniogamizdelgado/.bun/_bun"
