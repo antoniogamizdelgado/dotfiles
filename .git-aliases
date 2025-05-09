@@ -1,0 +1,38 @@
+function u() {
+	git fetch origin development
+	git rebase origin/development
+}
+
+function ur() {
+	git fetch origin development 
+	git reset --hard origin/development
+}
+
+function personal_github_account() {
+        git config --global user.name "antoniogamiz"
+        git config --global user.email "antoniogamiz10@gmail.com"
+    	ssh-add -D && ssh-add ~/.ssh/personal_user
+	gh auth switch
+}
+
+function work_github_account() {
+    git config --global user.name "antoniogamizbadger"
+    git config --global user.email "antonio.gamiz@badgermapping.com"
+    ssh-add -D && ssh-add ~/.ssh/id_ed25519
+    gh auth switch
+}
+
+alias gs='git status'
+alias gl='git log --oneline'
+alias glast='git log -1 HEAD --stat'
+alias m='git checkout development'
+alias pull='git pull origin $(git branch --show-current) --no-edit'
+alias push='pull; git push origin $(git branch --show-current)'
+alias fpush='git push -f origin $(git branch --show-current)'
+alias gc='git commit -m'
+
+function branch () {
+ git symbolic-ref --short HEAD | pbcopy
+}
+
+
