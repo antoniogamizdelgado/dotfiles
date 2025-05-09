@@ -9,16 +9,11 @@ return {
       severity_sort = true,
     })
 
-    local python_path = vim.fn.trim(vim.fn.system("poetry run which python"))
+    local lspconfig = require("lspconfig")
 
-    require("lspconfig").pyright.setup({
-      settings = {
-        python = {
-          pythonPath = python_path,
-        },
-      },
-    })
-
-    require("lspconfig").tsserver.setup({})
+    local python_config = require("plugins.languages.python")
+    python_config.setup_lsp(lspconfig)
+    lspconfig.lua_ls.setup({})
+    lspconfig.tsserver.setup({})
   end,
 }
